@@ -59,7 +59,7 @@ class LeadProcessView(APIView):
             input_lead = input_serializer.save()
 
             # إرسال البيانات إلى n8n
-            n8n_url = "https://YOUR_REAL_N8N_WEBHOOK_URL"
+            n8n_url = "https://ahmed0202.app.n8n.cloud/workflow/Yl0Z59j3A15Jf2hV"
             try:
                 n8n_response = requests.post(n8n_url, json=[input_serializer.data])
             except requests.exceptions.RequestException as e:
