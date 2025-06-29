@@ -3,207 +3,376 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pre sell agent </title>
+    <title>Pre sell agent</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
     <style>
       body {
-        background-color: #f8f9fa;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        padding: 0;
+        margin: 0;
       }
 
       .main-container {
-        max-width: 800px;
-        margin: 2rem auto;
-        padding: 0 1rem;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding: 1rem;
       }
 
       .card {
-        border: 1px solid #dee2e6;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        background: white;
+        border: none;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.95);
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
       }
 
       .card-header {
-        background-color: #495057;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 20px 20px 0 0 !important;
         color: white;
-        padding: 1.5rem;
-        border-bottom: 1px solid #dee2e6;
-        border-radius: 8px 8px 0 0;
+        padding: 2rem 1.5rem;
+        text-align: center;
       }
 
       .card-body {
-        padding: 2rem;
+        padding: 2rem 1.5rem;
       }
 
-      .form-label {
-        font-weight: 500;
-        color: #495057;
-        margin-bottom: 0.5rem;
-      }
-
-      .form-control, .form-select {
-        border: 1px solid #ced4da;
-        border-radius: 4px;
-        padding: 0.75rem;
+      .form-control,
+      .form-select {
+        border-radius: 15px;
+        border: 2px solid #e9ecef;
+        padding: 12px 20px;
+        transition: all 0.3s ease;
         font-size: 1rem;
+        height: auto;
       }
 
-      .form-control:focus, .form-select:focus {
-        border-color: #495057;
-        box-shadow: 0 0 0 0.2rem rgba(73, 80, 87, 0.25);
+      .form-control:focus,
+      .form-select:focus {
+        border-color: #667eea;
+        box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
       }
 
       .btn-primary {
-        background-color: #495057;
-        border-color: #495057;
-        padding: 0.75rem 2rem;
-        font-size: 1rem;
-        border-radius: 4px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border: none;
+        border-radius: 15px;
+        padding: 15px 40px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        font-size: 1.1rem;
+        min-width: 200px;
       }
 
       .btn-primary:hover {
-        background-color: #343a40;
-        border-color: #343a40;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+      }
+
+      .form-label {
+        font-weight: 600;
+        color: #495057;
+        margin-bottom: 8px;
+        font-size: 1rem;
       }
 
       .response-section {
-        background-color: #f8f9fa;
-        border: 1px solid #dee2e6;
-        border-radius: 4px;
-        padding: 1.5rem;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        border-radius: 15px;
+        padding: 2rem;
         margin-top: 2rem;
       }
 
-      .response-item {
+      .response-card {
         background: white;
-        border: 1px solid #dee2e6;
-        border-radius: 4px;
-        padding: 1rem;
-        margin-bottom: 1rem;
+        border-radius: 10px;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        height: 100%;
       }
 
-      .response-item h6 {
-        color: #495057;
-        margin-bottom: 0.5rem;
-        font-weight: 600;
+      .response-card h5 {
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
       }
 
       .loading {
         display: none;
         text-align: center;
-        padding: 2rem;
+        padding: 3rem;
+      }
+
+      .spinner-border {
+        color: #667eea;
+        width: 3rem;
+        height: 3rem;
       }
 
       .alert {
-        border-radius: 4px;
+        border-radius: 15px;
+        border: none;
+        padding: 1rem 1.5rem;
       }
 
-      h1 {
-        font-size: 1.5rem;
+      .icon {
+        font-size: 1.2em;
+        margin-right: 10px;
+      }
+
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .card-header p {
+        font-size: 1.1rem;
+        opacity: 0.9;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .main-container {
+          padding: 0.5rem;
+        }
+
+        .card-header {
+          padding: 1.5rem 1rem;
+        }
+
+        .card-body {
+          padding: 1.5rem 1rem;
+        }
+
+        h2 {
+          font-size: 1.5rem;
+        }
+
+        .btn-primary {
+          width: 100%;
+          margin-top: 1rem;
+        }
+
+        .response-section {
+          padding: 1.5rem;
+        }
+
+        .response-card {
+          margin-bottom: 1rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .card-header {
+          padding: 1rem 0.75rem;
+        }
+
+        .card-body {
+          padding: 1rem 0.75rem;
+        }
+
+        .form-control,
+        .form-select {
+          padding: 10px 15px;
+        }
+
+        .response-section {
+          padding: 1rem;
+        }
+
+        .response-card {
+          padding: 1rem;
+        }
+      }
+
+      /* Improved grid spacing */
+      .row {
+        margin-left: -0.75rem;
+        margin-right: -0.75rem;
+      }
+
+      .row > * {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+      }
+
+      /* Task breakdown styling */
+      .task-breakdown-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1rem;
+      }
+
+      .task-phase {
+        background: #f8f9fa;
+        border-radius: 8px;
+        padding: 1rem;
+        border-left: 4px solid #667eea;
+      }
+
+      .task-phase h6 {
+        color: #667eea;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+      }
+
+      .task-list {
+        list-style: none;
+        padding: 0;
         margin: 0;
       }
 
-      h4 {
-        color: #495057;
-        font-size: 1.25rem;
+      .task-list li {
+        padding: 0.25rem 0;
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .task-list li i {
+        margin-top: 0.25rem;
+        flex-shrink: 0;
       }
     </style>
   </head>
   <body>
     <div class="main-container">
-      <div class="card">
-        <div class="card-header">
-          <h1>AI Project Evaluation</h1>
-          <p class="mb-0 mt-2">Submit your project details for analysis</p>
-        </div>
-        <div class="card-body">
-          <form id="aiForm">
-            {% csrf_token %}
-            <div class="row">
-              <div class="col-md-6 mb-3">
-                <label for="need" class="form-label">Project Need</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="need"
-                  name="need"
-                  placeholder="e.g., University system"
-                  required
-                />
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-12 col-xl-10">
+            <div class="card">
+              <div class="card-header">
+                <h2 class="mb-0">
+                  <i class="fas fa-robot icon"></i>
+                  AI Project Evaluation System
+                </h2>
+                <p class="mb-0 mt-2">
+                  Get intelligent project analysis and recommendations
+                </p>
               </div>
-              <div class="col-md-6 mb-3">
-                <label for="email" class="form-label">Email Address</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="email"
-                  name="email"
-                  placeholder="your.email@example.com"
-                  required
-                />
+              <div class="card-body">
+                <form id="aiForm">
+                  {% csrf_token %}
+                  <div class="row">
+                    <div class="col-lg-6 col-md-6 mb-3">
+                      <label for="need" class="form-label">
+                        <i class="fas fa-lightbulb icon text-warning"></i>
+                        Project Need
+                      </label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="need"
+                        name="need"
+                        placeholder="e.g., University system"
+                        required
+                      />
+                    </div>
+                    <div class="col-lg-6 col-md-6 mb-3">
+                      <label for="email" class="form-label">
+                        <i class="fas fa-envelope icon text-primary"></i>
+                        Email Address
+                      </label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        name="email"
+                        placeholder="your.email@example.com"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-6 col-md-6 mb-3">
+                      <label for="budget" class="form-label">
+                        <i class="fas fa-dollar-sign icon text-success"></i>
+                        Budget (USD)
+                      </label>
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="budget"
+                        name="budget"
+                        placeholder="10000"
+                        min="1"
+                        required
+                      />
+                    </div>
+                    <div class="col-lg-6 col-md-6 mb-3">
+                      <label for="timeline" class="form-label">
+                        <i class="fas fa-clock icon text-info"></i>
+                        Timeline
+                      </label>
+                      <select
+                        class="form-select"
+                        id="timeline"
+                        name="timeline"
+                        required
+                      >
+                        <option value="">Select timeline</option>
+                        <option value="1 week">1 week</option>
+                        <option value="2 weeks">2 weeks</option>
+                        <option value="1 month">1 month</option>
+                        <option value="2 months">2 months</option>
+                        <option value="3 months">3 months</option>
+                        <option value="6 months">6 months</option>
+                        <option value="1 year">1 year</option>
+                        <option value="More than 1 year">
+                          More than 1 year
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-primary btn-lg">
+                      <i class="fas fa-paper-plane icon"></i>
+                      Analyze Project
+                    </button>
+                  </div>
+                </form>
+
+                <div class="loading" id="loading">
+                  <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                  <p class="mt-3 fs-5">
+                    Analyzing your project requirements...
+                  </p>
+                </div>
+
+                <div id="response" style="display: none">
+                  <div class="response-section">
+                    <h4 class="text-center mb-4">
+                      <i class="fas fa-chart-line icon text-primary"></i>
+                      Analysis Results
+                    </h4>
+                    <div id="responseContent"></div>
+                  </div>
+                </div>
+
+                <div id="error" style="display: none">
+                  <div class="alert alert-danger mt-4" role="alert">
+                    <i class="fas fa-exclamation-triangle icon"></i>
+                    <span id="errorMessage"></span>
+                  </div>
+                </div>
               </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-6 mb-3">
-                <label for="budget" class="form-label">Budget (USD)</label>
-                <input
-                  type="number"
-                  class="form-control"
-                  id="budget"
-                  name="budget"
-                  placeholder="10000"
-                  min="1"
-                  required
-                />
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="timeline" class="form-label">Timeline</label>
-                <select
-                  class="form-select"
-                  id="timeline"
-                  name="timeline"
-                  required
-                >
-                  <option value="">Select timeline</option>
-                  <option value="1 week">1 week</option>
-                  <option value="2 weeks">2 weeks</option>
-                  <option value="1 month">1 month</option>
-                  <option value="2 months">2 months</option>
-                  <option value="3 months">3 months</option>
-                  <option value="6 months">6 months</option>
-                  <option value="1 year">1 year</option>
-                  <option value="More than 1 year">More than 1 year</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="text-center mt-4">
-              <button type="submit" class="btn btn-primary">Submit for Analysis</button>
-            </div>
-          </form>
-
-          <div class="loading" id="loading">
-            <div class="spinner-border text-secondary" role="status">
-              <span class="visually-hidden">Loading...</span>
-            </div>
-            <p class="mt-3">Processing your request...</p>
-          </div>
-
-          <div id="response" style="display: none">
-            <div class="response-section">
-              <h4 class="mb-3">Analysis Results</h4>
-              <div id="responseContent"></div>
-            </div>
-          </div>
-
-          <div id="error" style="display: none">
-            <div class="alert alert-danger mt-4" role="alert">
-              <strong>Error:</strong> <span id="errorMessage"></span>
             </div>
           </div>
         </div>
@@ -212,114 +381,139 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-      document.getElementById("aiForm").addEventListener("submit", async function (e) {
-        e.preventDefault();
+      document
+        .getElementById("aiForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
 
-        // Show loading
-        document.getElementById("loading").style.display = "block";
-        document.getElementById("response").style.display = "none";
-        document.getElementById("error").style.display = "none";
+          // Show loading
+          document.getElementById("loading").style.display = "block";
+          document.getElementById("response").style.display = "none";
+          document.getElementById("error").style.display = "none";
 
-        // Get form data
-        const formData = new FormData(this);
-        const data = {
-          need: formData.get("need"),
-          email: formData.get("email"),
-          budget: parseInt(formData.get("budget")),
-          timeline: formData.get("timeline"),
-        };
+          // Get form data
+          const formData = new FormData(this);
+          const data = {
+            need: formData.get("need"),
+            email: formData.get("email"),
+            budget: parseInt(formData.get("budget")),
+            timeline: formData.get("timeline"),
+          };
 
-        try {
-          const response = await fetch("/ai_model/process/", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              "X-CSRFToken": formData.get("csrfmiddlewaretoken"),
-            },
-            body: JSON.stringify(data),
-          });
+          try {
+            const response = await fetch("/ai_model/process/", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                "X-CSRFToken": formData.get("csrfmiddlewaretoken"),
+              },
+              body: JSON.stringify(data),
+            });
 
-          const result = await response.json();
+            const result = await response.json();
 
-          // Hide loading
-          document.getElementById("loading").style.display = "none";
+            // Hide loading
+            document.getElementById("loading").style.display = "none";
 
-          if (response.ok) {
-            displayResponse(result);
-          } else {
-            displayError(result.error || "An error occurred while processing your request.");
+            if (response.ok) {
+              displayResponse(result);
+            } else {
+              displayError(
+                result.error ||
+                  "An error occurred while processing your request."
+              );
+            }
+          } catch (error) {
+            document.getElementById("loading").style.display = "none";
+            displayError("Network error: " + error.message);
           }
-
-        } catch (error) {
-          document.getElementById("loading").style.display = "none";
-          displayError("Network error: " + error.message);
-        }
-      });
+        });
 
       function displayResponse(data) {
         const responseDiv = document.getElementById("responseContent");
         const output = data.output;
 
-        let html = "";
+        let html = `
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-12 mb-3">
+                        <div class="response-card">
+                            <h5><i class="fas fa-project-diagram icon text-primary"></i>Project Summary</h5>
+                            <p>${
+                              output.project_summary ||
+                              "No project summary available"
+                            }</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 mb-3">
+                        <div class="response-card">
+                            <h5><i class="fas fa-money-bill-wave icon text-success"></i>Budget Analysis</h5>
+                            <p>${
+                              output.budget_summary ||
+                              "No budget analysis available"
+                            }</p>
+                        </div>
+                    </div>
+                </div>
 
-        if (output.project_summary) {
-          html += `
-            <div class="response-item">
-              <h6>Project Summary</h6>
-              <p>${output.project_summary}</p>
-            </div>
-          `;
-        }
-
-        if (output.budget_summary) {
-          html += `
-            <div class="response-item">
-              <h6>Budget Analysis</h6>
-              <p>${output.budget_summary}</p>
-            </div>
-          `;
-        }
-
-        if (output.timeline_summary) {
-          html += `
-            <div class="response-item">
-              <h6>Timeline Analysis</h6>
-              <p>${output.timeline_summary}</p>
-            </div>
-          `;
-        }
-
-        if (output.recommended_budget || output.recommended_duration) {
-          html += `
-            <div class="response-item">
-              <h6>Recommendations</h6>
-              ${output.recommended_budget ? `<p><strong>Budget:</strong> ${output.recommended_budget}</p>` : ''}
-              ${output.recommended_duration ? `<p><strong>Duration:</strong> ${output.recommended_duration}</p>` : ''}
-            </div>
-          `;
-        }
-
-        if (output.task_breakdown && Object.keys(output.task_breakdown).length > 0) {
-          html += `
-            <div class="response-item">
-              <h6>Task Breakdown</h6>
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-12 mb-3">
+                        <div class="response-card">
+                            <h5><i class="fas fa-calendar-alt icon text-info"></i>Timeline Analysis</h5>
+                            <p>${
+                              output.timeline_summary ||
+                              "No timeline analysis available"
+                            }</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 mb-3">
+                        <div class="response-card">
+                            <h5><i class="fas fa-thumbs-up icon text-warning"></i>Recommendations</h5>
+                            <p><strong>Budget:</strong> ${
+                              output.recommended_budget || "Not specified"
+                            }</p>
+                            <p><strong>Duration:</strong> ${
+                              output.recommended_duration || "Not specified"
+                            }</p>
+                        </div>
+                    </div>
+                </div>
             `;
 
-            for (const [phase, tasks] of Object.entries(output.task_breakdown)) {
-              html += `<p><strong>${phase}:</strong></p><ul>`;
+        if (
+          output.task_breakdown &&
+          Object.keys(output.task_breakdown).length > 0
+        ) {
+          html += `
+                    <div class="response-card">
+                        <h5><i class="fas fa-tasks icon text-secondary"></i>Task Breakdown</h5>
+                        <div class="task-breakdown-container">
+                `;
 
-              if (Array.isArray(tasks)) {
-                tasks.forEach((task) => {
-                  html += `<li>${task}</li>`;
-                });
-              } else if (typeof tasks === "string") {
-                html += `<li>${tasks}</li>`;
-              }
+          for (const [phase, tasks] of Object.entries(output.task_breakdown)) {
+            html += `
+                        <div class="task-phase">
+                            <h6>${phase}</h6>
+                            <ul class="task-list">
+                    `;
 
-              html += `</ul>`;
+            if (Array.isArray(tasks)) {
+              tasks.forEach((task) => {
+                html += `<li><i class="fas fa-check-circle text-success me-2"></i><span>${task}</span></li>`;
+              });
+            } else if (typeof tasks === "string") {
+              html += `<li><i class="fas fa-check-circle text-success me-2"></i><span>${tasks}</span></li>`;
             }
 
-            html += `</div>`;
+            html += `
+                            </ul>
+                        </div>
+                    `;
+          }
+
+          html += `
+                        </div>
+                    </div>
+                `;
         }
 
         responseDiv.innerHTML = html;
