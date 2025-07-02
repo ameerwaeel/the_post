@@ -3,6 +3,10 @@ from django.shortcuts import render
 # Create your views here.
 # leads/views.py
 
+def ai_form_view(request):
+    """View to render the AI form HTML template"""
+    return render(request, 'ai_form.html')
+
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -62,7 +66,7 @@ import json
 #             # n8n_url = "https://ahmed0202.app.n8n.cloud/workflow/Yl0Z59j3A15Jf2hV"
 #             n8n_url = "https://ahmed0202.app.n8n.cloud/webhook-test/bc2015e3-2193-4fd2-9f60-35000c94e852"
 
-            
+
 
 #             try:
 #                 n8n_response = requests.post(n8n_url, json=[input_serializer.data])
