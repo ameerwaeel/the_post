@@ -77,8 +77,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
+    'django_filters',
     'ai_model',
+    'channels',
+    'chat',
+
 ]
+ASGI_APPLICATION = "the_post.asgi.application"
+
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES':
