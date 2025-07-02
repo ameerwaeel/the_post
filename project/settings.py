@@ -26,11 +26,16 @@ SECRET_KEY = 'django-insecure-x)4h26e_ou_)+5j!bop&157o#k+&d9(srp!=nwwwcnhx3z4gyo
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-# ALLOWED_HOSTS = [ ]
-
 ALLOWED_HOSTS = [
-    'n8n-api.thepost.digital'
-]
+    'n8n-api.thepost.digital',
+    '127.0.0.1',
+    'localhost',
+    '51.89.23.8',  # ← أضف الـ IP ده
+ ]
+
+# ALLOWED_HOSTS = [
+#     'n8n-api.thepost.digital'
+# ]
 
 
 
