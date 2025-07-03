@@ -26,6 +26,8 @@ SECRET_KEY = 'django-insecure-x)4h26e_ou_)+5j!bop&157o#k+&d9(srp!=nwwwcnhx3z4gyo
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+# ALLOWED_HOSTS = []
+
 ALLOWED_HOSTS = [
     'n8n-api.thepost.digital',
     '127.0.0.1',
@@ -71,7 +73,6 @@ CSRF_TRUSTED_ORIGINS = [
     "https://n8n-api.thepost.digital",
 ]
 
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -88,7 +89,7 @@ INSTALLED_APPS = [
     'chat',
 
 ]
-ASGI_APPLICATION = "the_post.asgi.application"
+ASGI_APPLICATION = "project.asgi.application"
 
 
 REST_FRAMEWORK = {
