@@ -26,52 +26,49 @@ SECRET_KEY = 'django-insecure-x)4h26e_ou_)+5j!bop&157o#k+&d9(srp!=nwwwcnhx3z4gyo
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-# ALLOWED_HOSTS = []
-
-ALLOWED_HOSTS = [
-    'n8n-api.thepost.digital',
-    '127.0.0.1',
-    'localhost',
-    '51.89.23.8',  # ← أضف الـ IP ده
- ]
+ALLOWED_HOSTS = []
 
 # ALLOWED_HOSTS = [
-#     'n8n-api.thepost.digital'
+#     'n8n-api.thepost.digital',
+#     '127.0.0.1',
+#     'localhost',
+#     '51.89.23.8',  # ← أضف الـ IP ده
+#  ]
+
+
+
+
+# CORS_ALLOW_ALL_ORIGINS = False
+# CORS_ALLOWED_ORIGINS = [
+#     "https://www.n8n-api.thepost.digital",
+#     "https://n8n-api.thepost.digital",
+# ]
+# CORS_ALLOW_CREDENTIALS = True
+# CORS_ALLOW_METHODS = [
+#     'DELETE',
+#     'GET',
+#     'OPTIONS',
+#     'PATCH',
+#     'POST',
+#     'PUT',
+# ]
+# CORS_ALLOW_HEADERS = [
+#     'accept',
+#     'accept-encoding',
+#     'authorization',
+#     'content-type',
+#     'dnt',
+#     'origin',
+#     'user-agent',
+#     'x-csrftoken',
+#     'x-requested-with',
 # ]
 
-
-
-CORS_ALLOW_ALL_ORIGINS = False
-CORS_ALLOWED_ORIGINS = [
-    "https://www.n8n-api.thepost.digital",
-    "https://n8n-api.thepost.digital",
-]
-CORS_ALLOW_CREDENTIALS = True
-CORS_ALLOW_METHODS = [
-    'DELETE',
-    'GET',
-    'OPTIONS',
-    'PATCH',
-    'POST',
-    'PUT',
-]
-CORS_ALLOW_HEADERS = [
-    'accept',
-    'accept-encoding',
-    'authorization',
-    'content-type',
-    'dnt',
-    'origin',
-    'user-agent',
-    'x-csrftoken',
-    'x-requested-with',
-]
-
-# CSRF Settings
-CSRF_TRUSTED_ORIGINS = [
-    "https://www.n8n-api.thepost.digital",
-    "https://n8n-api.thepost.digital",
-]
+# # CSRF Settings
+# CSRF_TRUSTED_ORIGINS = [
+#     "https://www.n8n-api.thepost.digital",
+#     "https://n8n-api.thepost.digital",
+# ]
 
 
 INSTALLED_APPS = [
@@ -84,9 +81,12 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'django_filters',
+    'django_ckeditor_5',
+    'django_countries',
     'ai_model',
     'channels',
     'chat',
+    'products',
 
 ]
 ASGI_APPLICATION = "project.asgi.application"
@@ -197,7 +197,18 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR,'static','site_static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = '/media/'
+CKEDITOR_5_UPLOAD_PATH = "uploads/"
+CKEDITOR_5_IMAGE_BACKEND = "pillow"
 
+CKEDITOR_5_CONFIGS = {
+    'default': {
+        'toolbar': [
+            'heading', '|', 'bold', 'italic', 'link', 'imageUpload', 'undo', 'redo',
+            'bulletedList', 'numberedList', 'blockQuote', 'insertTable',
+        ],
+        'language': 'en',
+    },
+}
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

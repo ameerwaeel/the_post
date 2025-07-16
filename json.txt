@@ -1,0 +1,460 @@
+POST-->http://127.0.0.1:8000/products/ourworks/
+{
+    "name": "mero",
+    "description": "web application",
+    "rightcolor": "ffffff",
+    "leftcolor": "000000",
+    "link": "https://peakypaws.net/",
+    "main_img": "http://127.0.0.1:8000/media/main_img/1Final-Logo-Peaky-Paws-1.png.webp",
+    "left_img": "http://127.0.0.1:8000/media/left_img/download.jpg",
+    "right_img": "http://127.0.0.1:8000/media/right_img/download.jpg",
+}
+---------------------------------------------------
+GET-->http://127.0.0.1:8000/products/ourworks/
+[
+    {
+        "name": "mero",
+        "description": "web application",
+        "rightcolor": "ffffff",
+        "leftcolor": "000000",
+        "link": "https://peakypaws.net/",
+        "main_img": "http://127.0.0.1:8000/media/main_img/1Final-Logo-Peaky-Paws-1.png.webp",
+        "left_img": "http://127.0.0.1:8000/media/left_img/download.jpg",
+        "right_img": "http://127.0.0.1:8000/media/right_img/download.jpg",
+        "updated_at": "2025-07-16T04:28:43.931160Z",
+        "created_at": "2025-07-16T04:28:43.931160Z"
+    }
+]
+************************************************************
+POST-->http://127.0.0.1:8000/products/newsletter/
+{
+    "email": "admin@gmail.com",
+}
+-------------------------------------------------------
+GET-->http://127.0.0.1:8000/products/newsletter/
+[
+    {
+        "email": "admin@gmail.com",
+        "updated_at": "2025-07-16T04:30:49.952239Z",
+        "created_at": "2025-07-16T04:30:49.952239Z"
+    },
+    {
+        "email": "mero@gmail.com",
+        "updated_at": "2025-07-16T04:31:46.524183Z",
+        "created_at": "2025-07-16T04:31:46.524183Z"
+    }
+]
+*************************************************************
+POST-->http://127.0.0.1:8000/products/whoweare/
+{
+    "name": "mohamed elsayed",
+    "position": "ceo founder",
+    "whoimg": "http://127.0.0.1:8000/media/who_img/Screenshot_319.png",
+}
+------------------------------------------------------------
+GET-->http://127.0.0.1:8000/products/whoweare/
+[
+    {
+        "name": "mohamed elsayed",
+        "position": "ceo founder",
+        "whoimg": "http://127.0.0.1:8000/media/who_img/Screenshot_319.png",
+        "updated_at": "2025-07-16T04:32:59.107366Z",
+        "created_at": "2025-07-16T04:32:59.107366Z"
+    }
+]
+**********************************************************************
+POST-->http://127.0.0.1:8000/products/logos/
+{
+    "name": "peaky paws",
+    "link": "https://peakypaws.net/",
+    "logoimg": "http://127.0.0.1:8000/media/logo_img/1Final-Logo-Peaky-Paws-1.png.webp",
+}
+---------------------------------------------------------------
+GET-->http://127.0.0.1:8000/products/logos/
+[
+    {
+        "name": "peaky paws",
+        "link": "https://peakypaws.net/",
+        "logoimg": "http://127.0.0.1:8000/media/logo_img/1Final-Logo-Peaky-Paws-1.png.webp",
+        "updated_at": "2025-07-16T04:34:23.682028Z",
+        "created_at": "2025-07-16T04:34:23.681011Z"
+    }
+]
+******************************************************************************************
+POST-->http://127.0.0.1:8000/products/oursolution/
+{
+    "text": "welcom",
+    "answer": "welcom",
+}
+----------------------------------------------------------------
+GET-->http://127.0.0.1:8000/products/oursolution/
+[
+    {
+        "text": "hello hello",
+        "answer": "hello hello",
+        "updated_at": "2025-07-16T04:36:59.344349Z",
+        "created_at": "2025-07-16T04:36:59.344349Z"
+    },
+    {
+        "text": "welcom",
+        "answer": "welcom",
+        "updated_at": "2025-07-16T04:37:11.378840Z",
+        "created_at": "2025-07-16T04:37:11.378840Z"
+    },
+    {
+        "text": "hi hi hi ",
+        "answer": "hi hi hi ",
+        "updated_at": "2025-07-16T04:38:18.417631Z",
+        "created_at": "2025-07-16T04:38:18.417631Z"
+    },
+    {
+        "text": "hola ",
+        "answer": "hola ",
+        "updated_at": "2025-07-16T04:38:28.156196Z",
+        "created_at": "2025-07-16T04:38:28.156196Z"
+    }
+]
+***********************************************************************************************
+POST-->http://127.0.0.1:8000/products/ourresults/
+{
+    "before_img": "http://127.0.0.1:8000/media/before_img/1Final-Logo-Peaky-Paws-1.png.webp",
+    "after_img": "http://127.0.0.1:8000/media/after_img/download.jpg",
+    "after_description": "tile green after",
+    "before_descrition": "tile green before",
+}
+-----------------------------------------------------
+GET-->http://127.0.0.1:8000/products/ourresults/
+[
+    {
+        "before_img": "http://127.0.0.1:8000/media/before_img/1Final-Logo-Peaky-Paws-1.png.webp",
+        "after_img": "http://127.0.0.1:8000/media/after_img/download.jpg",
+        "after_description": "tile green after",
+        "before_descrition": "tile green before",
+        "updated_at": "2025-07-16T04:42:03.466230Z",
+        "created_at": "2025-07-16T04:42:03.466230Z"
+    },
+    {
+        "before_img": "http://127.0.0.1:8000/media/before_img/download.jpg",
+        "after_img": "http://127.0.0.1:8000/media/after_img/download_3.jpg",
+        "after_description": "ufeed after",
+        "before_descrition": "ufeed before",
+        "updated_at": "2025-07-16T04:43:20.462371Z",
+        "created_at": "2025-07-16T04:43:20.462371Z"
+    },
+    {
+        "before_img": "http://127.0.0.1:8000/media/before_img/download_vwixGKP.jpg",
+        "after_img": "http://127.0.0.1:8000/media/after_img/download_3_v6RPVI0.jpg",
+        "after_description": "dr.genedy after",
+        "before_descrition": "dr.genedy before",
+        "updated_at": "2025-07-16T04:43:48.874354Z",
+        "created_at": "2025-07-16T04:43:48.874354Z"
+    },
+    {
+        "before_img": "http://127.0.0.1:8000/media/before_img/download_3.jpg",
+        "after_img": "http://127.0.0.1:8000/media/after_img/download_2.jpg",
+        "after_description": "peaky paws after",
+        "before_descrition": "peaky paws before",
+        "updated_at": "2025-07-16T04:44:28.687101Z",
+        "created_at": "2025-07-16T04:44:28.687101Z"
+    }
+]
+
+***********************************************************************************************
+POST-->http://127.0.0.1:8000/products/imgs/
+{
+    "img": "http://127.0.0.1:8000/media/image/1Final-Logo-Peaky-Paws-1_hhGLAIE.png.webp",
+    "title": "peaky paws",
+    "description": "peaky paws",
+}
+-----------------------------------------------------
+GET-->http://127.0.0.1:8000/products/imgs/
+[
+    {
+        "img": "http://127.0.0.1:8000/media/image/1Final-Logo-Peaky-Paws-1.png.webp",
+        "title": "tile green",
+        "description": "tile green",
+        "updated_at": "2025-07-16T04:47:09.017548Z",
+        "created_at": "2025-07-16T04:47:09.017548Z"
+    },
+    {
+        "img": "http://127.0.0.1:8000/media/image/download.jpg",
+        "title": "dr genedy",
+        "description": "dr genedy",
+        "updated_at": "2025-07-16T04:47:24.135252Z",
+        "created_at": "2025-07-16T04:47:24.135252Z"
+    },
+    {
+        "img": "http://127.0.0.1:8000/media/image/download_EHDNA66.jpg",
+        "title": "ufeed",
+        "description": "ufeed",
+        "updated_at": "2025-07-16T04:47:38.974135Z",
+        "created_at": "2025-07-16T04:47:38.974135Z"
+    },
+    {
+        "img": "http://127.0.0.1:8000/media/image/1Final-Logo-Peaky-Paws-1_hhGLAIE.png.webp",
+        "title": "peaky paws",
+        "description": "peaky paws",
+        "updated_at": "2025-07-16T04:47:56.880230Z",
+        "created_at": "2025-07-16T04:47:56.879190Z"
+    },
+    {
+        "img": "http://127.0.0.1:8000/media/image/1Final-Logo-Peaky-Paws-1_P6UC6rr.png.webp",
+        "title": "peaky paws",
+        "description": "peaky paws",
+        "updated_at": "2025-07-16T04:48:38.116649Z",
+        "created_at": "2025-07-16T04:48:38.116649Z"
+    },
+    {
+        "img": "http://127.0.0.1:8000/media/image/download_2.jpg",
+        "title": "peaky paws",
+        "description": "peaky paws",
+        "updated_at": "2025-07-16T04:48:47.648238Z",
+        "created_at": "2025-07-16T04:48:47.648238Z"
+    }
+]
+***********************************************************************************************
+POST-->http://127.0.0.1:8000/products/projects/
+{
+    "name": "tilegreen",
+    "description": "tilegreen description",
+    "link": "https://tilegreen.co",
+    "main_img": "http://127.0.0.1:8000/media/main_img/1Final-Logo-Peaky-Paws-1_0WyMhX7.png.webp",
+    "logo": "http://127.0.0.1:8000/media/main_img/1Final-Logo-Peaky-Paws-1_0WyMhX7.png.webp",
+    "problem_defination": "the problem was big",
+    "our_solution": ["welcom", "hola "],
+    "imges": ["peaky paws", "ufeed"],
+    "our_results": ["peaky paws after"]
+}
+
+-----------------------------------------------------
+GET-->http://127.0.0.1:8000/products/projects/
+
+[
+    {
+        "name": "peaky paws",
+        "description": "peaky paws",
+        "link": "https://peakypaws.net/",
+        "main_img": "http://127.0.0.1:8000/media/main_img/1Final-Logo-Peaky-Paws-1_0WyMhX7.png.webp",
+        "logo": "http://127.0.0.1:8000/media/right_img/1Final-Logo-Peaky-Paws-1.png.webp",
+        "problem_defination": "",
+        "our_solution": [
+            {
+                "text": "welcom",
+                "answer": "welcom",
+                "updated_at": "2025-07-16T04:37:11.378840Z",
+                "created_at": "2025-07-16T04:37:11.378840Z"
+            }
+        ],
+        "imges": [
+            {
+                "img": "http://127.0.0.1:8000/media/image/1Final-Logo-Peaky-Paws-1_hhGLAIE.png.webp",
+                "title": "peaky paws",
+                "description": "peaky paws",
+                "updated_at": "2025-07-16T04:47:56.880230Z",
+                "created_at": "2025-07-16T04:47:56.879190Z"
+            },
+            {
+                "img": "http://127.0.0.1:8000/media/image/1Final-Logo-Peaky-Paws-1_P6UC6rr.png.webp",
+                "title": "peaky paws",
+                "description": "peaky paws",
+                "updated_at": "2025-07-16T04:48:38.116649Z",
+                "created_at": "2025-07-16T04:48:38.116649Z"
+            },
+            {
+                "img": "http://127.0.0.1:8000/media/image/download_2.jpg",
+                "title": "peaky paws",
+                "description": "peaky paws",
+                "updated_at": "2025-07-16T04:48:47.648238Z",
+                "created_at": "2025-07-16T04:48:47.648238Z"
+            }
+        ],
+        "our_results": [
+            {
+                "before_img": "http://127.0.0.1:8000/media/before_img/download_3.jpg",
+                "after_img": "http://127.0.0.1:8000/media/after_img/download_2.jpg",
+                "after_description": "peaky paws after",
+                "before_descrition": "peaky paws before",
+                "updated_at": "2025-07-16T04:44:28.687101Z",
+                "created_at": "2025-07-16T04:44:28.687101Z"
+            }
+        ],
+        "updated_at": "2025-07-16T04:51:52.387062Z",
+        "created_at": "2025-07-16T04:51:52.387062Z"
+    },
+    {
+        "name": "tilegreen",
+        "description": "tilegreen description",
+        "link": "https://tilegreen.co",
+        "main_img": null,
+        "logo": null,
+        "problem_defination": "the problem was big",
+        "our_solution": [
+            {
+                "text": "welcom",
+                "answer": "welcom",
+                "updated_at": "2025-07-16T04:37:11.378840Z",
+                "created_at": "2025-07-16T04:37:11.378840Z"
+            }
+        ],
+        "imges": [
+            {
+                "img": "http://127.0.0.1:8000/media/image/download_EHDNA66.jpg",
+                "title": "ufeed",
+                "description": "ufeed",
+                "updated_at": "2025-07-16T04:47:38.974135Z",
+                "created_at": "2025-07-16T04:47:38.974135Z"
+            },
+            {
+                "img": "http://127.0.0.1:8000/media/image/1Final-Logo-Peaky-Paws-1_hhGLAIE.png.webp",
+                "title": "peaky paws",
+                "description": "peaky paws",
+                "updated_at": "2025-07-16T04:47:56.880230Z",
+                "created_at": "2025-07-16T04:47:56.879190Z"
+            }
+        ],
+        "our_results": [
+            {
+                "before_img": "http://127.0.0.1:8000/media/before_img/download_3.jpg",
+                "after_img": "http://127.0.0.1:8000/media/after_img/download_2.jpg",
+                "after_description": "peaky paws after",
+                "before_descrition": "peaky paws before",
+                "updated_at": "2025-07-16T04:44:28.687101Z",
+                "created_at": "2025-07-16T04:44:28.687101Z"
+            }
+        ],
+        "updated_at": "2025-07-16T05:22:25.984232Z",
+        "created_at": "2025-07-16T05:22:25.983177Z"
+    },
+    {
+        "name": "tilegreen",
+        "description": "tilegreen description",
+        "link": "https://tilegreen.co",
+        "main_img": null,
+        "logo": null,
+        "problem_defination": "the problem was big",
+        "our_solution": [
+            {
+                "text": "welcom",
+                "answer": "welcom",
+                "updated_at": "2025-07-16T04:37:11.378840Z",
+                "created_at": "2025-07-16T04:37:11.378840Z"
+            }
+        ],
+        "imges": [
+            {
+                "img": "http://127.0.0.1:8000/media/image/download_EHDNA66.jpg",
+                "title": "ufeed",
+                "description": "ufeed",
+                "updated_at": "2025-07-16T04:47:38.974135Z",
+                "created_at": "2025-07-16T04:47:38.974135Z"
+            },
+            {
+                "img": "http://127.0.0.1:8000/media/image/1Final-Logo-Peaky-Paws-1_hhGLAIE.png.webp",
+                "title": "peaky paws",
+                "description": "peaky paws",
+                "updated_at": "2025-07-16T04:47:56.880230Z",
+                "created_at": "2025-07-16T04:47:56.879190Z"
+            }
+        ],
+        "our_results": [
+            {
+                "before_img": "http://127.0.0.1:8000/media/before_img/download_3.jpg",
+                "after_img": "http://127.0.0.1:8000/media/after_img/download_2.jpg",
+                "after_description": "peaky paws after",
+                "before_descrition": "peaky paws before",
+                "updated_at": "2025-07-16T04:44:28.687101Z",
+                "created_at": "2025-07-16T04:44:28.687101Z"
+            }
+        ],
+        "updated_at": "2025-07-16T05:24:58.511553Z",
+        "created_at": "2025-07-16T05:24:58.511553Z"
+    },
+    {
+        "name": "tilegreen",
+        "description": "tilegreen description",
+        "link": "https://tilegreen.co",
+        "main_img": null,
+        "logo": null,
+        "problem_defination": "the problem was big",
+        "our_solution": [
+            {
+                "text": "welcom",
+                "answer": "welcom",
+                "updated_at": "2025-07-16T04:37:11.378840Z",
+                "created_at": "2025-07-16T04:37:11.378840Z"
+            }
+        ],
+        "imges": [
+            {
+                "img": "http://127.0.0.1:8000/media/image/download_EHDNA66.jpg",
+                "title": "ufeed",
+                "description": "ufeed",
+                "updated_at": "2025-07-16T04:47:38.974135Z",
+                "created_at": "2025-07-16T04:47:38.974135Z"
+            },
+            {
+                "img": "http://127.0.0.1:8000/media/image/1Final-Logo-Peaky-Paws-1_hhGLAIE.png.webp",
+                "title": "peaky paws",
+                "description": "peaky paws",
+                "updated_at": "2025-07-16T04:47:56.880230Z",
+                "created_at": "2025-07-16T04:47:56.879190Z"
+            }
+        ],
+        "our_results": [
+            {
+                "before_img": "http://127.0.0.1:8000/media/before_img/download_3.jpg",
+                "after_img": "http://127.0.0.1:8000/media/after_img/download_2.jpg",
+                "after_description": "peaky paws after",
+                "before_descrition": "peaky paws before",
+                "updated_at": "2025-07-16T04:44:28.687101Z",
+                "created_at": "2025-07-16T04:44:28.687101Z"
+            }
+        ],
+        "updated_at": "2025-07-16T05:26:34.750734Z",
+        "created_at": "2025-07-16T05:26:34.750734Z"
+    },
+    {
+        "name": "New Project",
+        "description": "Project description",
+        "link": "https://example.com",
+        "main_img": null,
+        "logo": null,
+        "problem_defination": "problem text",
+        "our_solution": [
+            {
+                "text": "welcom",
+                "answer": "welcom",
+                "updated_at": "2025-07-16T04:37:11.378840Z",
+                "created_at": "2025-07-16T04:37:11.378840Z"
+            }
+        ],
+        "imges": [
+            {
+                "img": "http://127.0.0.1:8000/media/image/1Final-Logo-Peaky-Paws-1.png.webp",
+                "title": "tile green",
+                "description": "tile green",
+                "updated_at": "2025-07-16T04:47:09.017548Z",
+                "created_at": "2025-07-16T04:47:09.017548Z"
+            },
+            {
+                "img": "http://127.0.0.1:8000/media/image/1Final-Logo-Peaky-Paws-1_hhGLAIE.png.webp",
+                "title": "peaky paws",
+                "description": "peaky paws",
+                "updated_at": "2025-07-16T04:47:56.880230Z",
+                "created_at": "2025-07-16T04:47:56.879190Z"
+            }
+        ],
+        "our_results": [
+            {
+                "before_img": "http://127.0.0.1:8000/media/before_img/download_3.jpg",
+                "after_img": "http://127.0.0.1:8000/media/after_img/download_2.jpg",
+                "after_description": "peaky paws after",
+                "before_descrition": "peaky paws before",
+                "updated_at": "2025-07-16T04:44:28.687101Z",
+                "created_at": "2025-07-16T04:44:28.687101Z"
+            }
+        ],
+        "updated_at": "2025-07-16T05:30:20.402595Z",
+        "created_at": "2025-07-16T05:30:20.402595Z"
+    }
+]
