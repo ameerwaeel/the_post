@@ -120,9 +120,9 @@ from channels.generic.websocket import AsyncWebsocketConsumer
 from .models import ChatMessage
 from django.utils.timezone import now
 from asgiref.sync import sync_to_async
+N8N_WEBHOOK_URL = "https://n8n.thepost.digital/webhook/91822092-5356-41ac-bb03-58100cffd404/chat"
 
-N8N_WEBHOOK_URL = "https://ahra2004.app.n8n.cloud/webhook/9a43b32a-0188-42e8-ad53-4788eb4af36d/chat"
-
+# N8N_WEBHOOK_URL = "https://ahra2004.app.n8n.cloud/webhook/9a43b32a-0188-42e8-ad53-4788eb4af36d/chat"
 class ChatConsumer(AsyncWebsocketConsumer):
     async def connect(self):
         self.session_id = self.scope["query_string"].decode("utf-8").split("session_id=")[-1]
