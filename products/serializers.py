@@ -8,10 +8,7 @@ class OurWorksSerializer(serializers.ModelSerializer):
         model = OurWorks
         fields = ['name', 'description', 'rightcolor', 'leftcolor', 'link', 'main_img', 'left_img','right_img','updated_at' ,'created_at']
 
-class NewsLetterSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = NewsLetter
-        fields = ['email','updated_at' ,'created_at' ]
+
 
 class WhoWeAreSerializer(serializers.ModelSerializer):
     class Meta:
@@ -97,3 +94,22 @@ class ProjectsCreateSerializer(serializers.ModelSerializer):
 
         # 👇 رجّع الـ serialized data باستخدام ProjectsSerializer
         return project
+
+
+
+class HomepageProjectsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = HomepageProjects
+        fields = ['name', 'description', 'subdescription', 'main_img', 'link','logo','updated_at' ,'created_at']
+class CountersSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Counters
+        fields = ['startup_numbers', 'startup_description', 'strategies_numbers', 'strategies_description', 'subscribbers_numbers',  'subscribbers_description','updated_at' ,'created_at']
+class ServicesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Services
+        fields = ['name','updated_at' ,'created_at']
+
+
+
+

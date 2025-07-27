@@ -31,17 +31,6 @@ class OurWorksDetailView(generics.RetrieveUpdateDestroyAPIView):
     parser_classes = [JSONParser, MultiPartParser, FormParser]
     lookup_field = 'uuid'
 
-class NewsLetterListCreateView(generics.ListCreateAPIView):
-    queryset = NewsLetter.objects.all()
-    serializer_class = NewsLetterSerializer
-    parser_classes = [JSONParser, MultiPartParser, FormParser]
-
-class NewsLetterDetailView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = NewsLetter.objects.all()
-    serializer_class = NewsLetterSerializer
-    parser_classes = [JSONParser, MultiPartParser, FormParser]
-    lookup_field = 'uuid'
-
 class WhoWeAreListCreateView(generics.ListCreateAPIView):
     queryset = WhoWeAre.objects.all()
     serializer_class = WhoWeAreSerializer
@@ -122,5 +111,41 @@ class ImgsListCreateView(generics.ListCreateAPIView):
 class ImgsDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Imgs.objects.all()
     serializer_class = ImgsSerializer
+    parser_classes = [JSONParser, MultiPartParser, FormParser]
+    lookup_field = 'uuid'
+
+
+
+
+class HomepageProjectsListCreateView(generics.ListCreateAPIView):
+    queryset = HomepageProjects.objects.all()
+    serializer_class = HomepageProjectsSerializer
+    parser_classes = [JSONParser, MultiPartParser, FormParser]
+
+class HomepageProjectsDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = HomepageProjects.objects.all()
+    serializer_class = HomepageProjectsSerializer
+    parser_classes = [JSONParser, MultiPartParser, FormParser]
+    lookup_field = 'uuid'
+
+class CountersListCreateView(generics.ListCreateAPIView):
+    queryset = Counters.objects.all()
+    serializer_class = CountersSerializer
+    parser_classes = [JSONParser, MultiPartParser, FormParser]
+
+class CountersDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Counters.objects.all()
+    serializer_class = CountersSerializer
+    parser_classes = [JSONParser, MultiPartParser, FormParser]
+    lookup_field = 'uuid'
+
+class ServicesListCreateView(generics.ListCreateAPIView):
+    queryset = Services.objects.all()
+    serializer_class = ServicesSerializer
+    parser_classes = [JSONParser, MultiPartParser, FormParser]
+
+class ServicesDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Services.objects.all()
+    serializer_class = ServicesSerializer
     parser_classes = [JSONParser, MultiPartParser, FormParser]
     lookup_field = 'uuid'

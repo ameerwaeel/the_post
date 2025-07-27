@@ -64,17 +64,7 @@ class OurWorks(SlugUUIDMixin, TimeStampedModel):
 
 
 
-class NewsLetter(SlugUUIDMixin, TimeStampedModel):
-    email=models.EmailField(max_length=254,verbose_name='email',unique=True,null=False, blank=False)
-    class Meta:
-        verbose_name = ("NewsLetter")
-        verbose_name_plural = ("NewsLetters")
 
-    def save(self, *args, **kwargs):
-        if not self.pk or NewsLetter.objects.get(pk=self.pk).email != self.email:
-            self.slug = self.generate_unique_slug(self.email, NewsLetter)
-        super().save(*args, **kwargs)
-    def __str__(self): return str(self.email)
 
 class WhoWeAre(SlugUUIDMixin, TimeStampedModel):
     name=CKEditor5Field( config_name='default',verbose_name='name')
@@ -172,3 +162,55 @@ class Imgs(SlugUUIDMixin, TimeStampedModel):
             self.slug = self.generate_unique_slug(self.title, Imgs)
         super().save(*args, **kwargs)
     def __str__(self): return str(self.title)
+
+
+class HomepageProjects(SlugUUIDMixin, TimeStampedModel):
+    name=CKEditor5Field( config_name='default',verbose_name='name')
+    description=CKEditor5Field( config_name='default',verbose_name='description')
+    subdescription=CKEditor5Field( config_name='default',verbose_name='subdescription ')
+    main_img=models.ImageField(upload_to='main_img/',verbose_name='main img',null=False, blank=False)
+    logo=models.ImageField(upload_to='logo_img/',null=False, blank=False,verbose_name='logo img')
+    link = models.URLField(verbose_name=("link"), null=True, blank=True)
+    class Meta:
+        verbose_name = ("Homepage Project")
+        verbose_name_plural = ("Homepage Projects")
+
+    def save(self, *args, **kwargs):
+        if not self.pk or HomepageProjects.objects.get(pk=self.pk).name != self.name:
+            self.slug = self.generate_unique_slug(self.name, HomepageProjects)
+        super().save(*args, **kwargs)
+    def __str__(self): return str(self.name)
+
+
+class Counters(SlugUUIDMixin, TimeStampedModel):
+    startup_numbers=models.PositiveIntegerField(verbose_name='startup_numbers')
+    startup_description=CKEditor5Field( config_name='default',verbose_name='startup_description')
+    strategies_numbers=models.PositiveIntegerField(verbose_name='strategies_numbers')
+    strategies_description=CKEditor5Field( config_name='default',verbose_name='strategies_description')
+    subscribbers_numbers=models.PositiveIntegerField(verbose_name='subscribbers_numbers')
+    subscribbers_description=CKEditor5Field( config_name='default',verbose_name='subscribbers_description')        
+
+    class Meta:
+        verbose_name = ("Counter")
+        verbose_name_plural = ("Counters")
+
+    def save(self, *args, **kwargs):
+        if not self.pk or Counters.objects.get(pk=self.pk).startup_numbers != self.startup_numbers:
+            self.slug = self.generate_unique_slug(self.startup_numbers, Counters)
+        super().save(*args, **kwargs)
+    def __str__(self): return str(self.startup_numbers)
+
+class Services(SlugUUIDMixin, TimeStampedModel):
+    name=CKEditor5Field( config_name='default',verbose_name='services name')
+
+    class Meta:
+        verbose_name = ("Service")
+        verbose_name_plural = ("Services")
+
+    def save(self, *args, **kwargs):
+        if not self.pk or Services.objects.get(pk=self.pk).name != self.name:
+            self.slug = self.generate_unique_slug(self.name, Services)
+        super().save(*args, **kwargs)
+    def __str__(self): return str(self.name)
+
+    

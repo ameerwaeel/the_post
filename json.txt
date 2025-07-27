@@ -458,3 +458,163 @@ GET-->http://127.0.0.1:8000/products/projects/
         "created_at": "2025-07-16T05:30:20.402595Z"
     }
 ]
+*************************************************************
+POST-->http://127.0.0.1:8000/products/HomepageProjects/
+{
+    "name": "mero",
+    "description": "web application",
+    "subdescription": "web application",
+    "main_img": "http://127.0.0.1:8000/media/main_img/1Final-Logo-Peaky-Paws-1_UavTkic.png.webp",
+    "link": "https://peakypaws.net/",
+    "logo": "http://127.0.0.1:8000/media/logo_img/1Final-Logo-Peaky-Paws-1_YCCdRis.png.webp",
+}
+
+--------------------------------------------------------
+GET-->http://127.0.0.1:8000/products/HomepageProjects/
+{
+    "name": "mero",
+    "description": "web application",
+    "subdescription": "web application",
+    "main_img": "http://127.0.0.1:8000/media/main_img/1Final-Logo-Peaky-Paws-1_UavTkic.png.webp",
+    "link": "https://peakypaws.net/",
+    "logo": "http://127.0.0.1:8000/media/logo_img/1Final-Logo-Peaky-Paws-1_YCCdRis.png.webp",
+    "updated_at": "2025-07-26T11:32:06.946929Z",
+    "created_at": "2025-07-26T11:32:06.946929Z"
+}
+
+*************************************************************
+*************************************************************
+POST-->http://127.0.0.1:8000/products/Counters/
+{
+    "startup_numbers": 7,
+    "startup_description": "trytfugyiuhoijkpol;'./",
+    "strategies_numbers": 100,
+    "strategies_description": "trytfugyiuhoijkpol;'./",
+    "subscribbers_numbers": 10,
+    "subscribbers_description": "trytfugyiuhoijkpol;'./",
+}
+--------------------------------------------------------
+GET-->http://127.0.0.1:8000/products/Counters/
+{
+    "startup_numbers": 7,
+    "startup_description": "trytfugyiuhoijkpol;'./",
+    "strategies_numbers": 100,
+    "strategies_description": "trytfugyiuhoijkpol;'./",
+    "subscribbers_numbers": 10,
+    "subscribbers_description": "trytfugyiuhoijkpol;'./",
+    "updated_at": "2025-07-26T11:35:55.683785Z",
+    "created_at": "2025-07-26T11:35:55.683785Z"
+}
+*************************************************************
+*************************************************************
+POST-->http://127.0.0.1:8000/products/Services/
+{
+    "name": "markting"
+}
+--------------------------------------------------------
+GET-->http://127.0.0.1:8000/products/Services/
+{
+    "name": "markting",
+    "updated_at": "2025-07-26T11:37:00.542348Z",
+    "created_at": "2025-07-26T11:37:00.542348Z"
+}
+*************************************************************
+*************************************************************
+POST-->http://127.0.0.1:8000/contact_us/interests/
+{
+    "name": "programming",
+}
+--------------------------------------------------------
+GET-->http://127.0.0.1:8000/contact_us/interests/
+[
+    {
+        "name": "programming",
+        "updated_at": "2025-07-26T12:41:55.290352Z",
+        "created_at": "2025-07-26T12:41:55.290352Z"
+    },
+    {
+        "name": "markting",
+        "updated_at": "2025-07-26T12:42:53.466272Z",
+        "created_at": "2025-07-26T12:42:53.466272Z"
+    },
+    {
+        "name": "other",
+        "updated_at": "2025-07-26T12:43:00.528579Z",
+        "created_at": "2025-07-26T12:43:00.528579Z"
+    }
+]
+*************************************************************
+*************************************************************
+POST-->http://127.0.0.1:8000/contact_us/contact/
+{
+    "full_name": "John Smith",
+    "email": "john@example.com",
+    "phone": "01000000000",
+    "company_name": "MyCo",
+    "comment": "Hello!",
+    "budget": "1200.00",
+    "file": "http://127.0.0.1:8000/media/chatcontactus/files/https.pdf",
+    "interests": "other" 
+}
+--------------------------------------------------------
+GET-->http://127.0.0.1:8000/contact_us/contact/
+[
+    {
+        "full_name": "John Smith",
+        "email": "john@example.com",
+        "phone": "01000000000",
+        "company_name": "MyCo",
+        "comment": "Hello!",
+        "budget": "1200.00",
+        "file": "http://127.0.0.1:8000/media/chatcontactus/files/https.pdf",
+        "interests": "other",
+        "updated_at": "2025-07-26T13:34:32.389184Z",
+        "created_at": "2025-07-26T13:34:32.388675Z"
+    }
+]
+*************************************************************
+*************************************************************
+POST-->http://127.0.0.1:8000/contact_us/chat-contact/
+{
+    "full_name": "gxfcvnn gxfcvnn",
+    "email": "admin@gmail.com",
+    "phone": "01015651362",
+    "company_name": "dsafg",
+    "comment": "wafSdsgfdcgjghk",
+    "session": "12551",
+    "link": "https://peakypaws.net/",
+}
+--------------------------------------------------------
+GET-->http://127.0.0.1:8000/contact_us/chat-contact/
+[
+    {
+        "full_name": "gxfcvnn gxfcvnn",
+        "email": "admin@gmail.com",
+        "phone": "01015651362",
+        "company_name": "dsafg",
+        "comment": "wafSdsgfdcgjghk",
+        "session": "12551",
+        "link": "https://peakypaws.net/",
+        "updated_at": "2025-07-26T13:37:59.066619Z",
+        "created_at": "2025-07-26T13:37:59.066619Z"
+    }
+]
+*************************************************************
+POST-->http://127.0.0.1:8000/contact_us/newsletter/
+{
+    "email": "ahmed@gmail.com"
+}
+--------------------------------------------------------
+GET-->http://127.0.0.1:8000/contact_us/newsletter/
+[
+    {
+        "email": "admin@gmail.com",
+        "updated_at": "2025-07-26T13:39:13.980860Z",
+        "created_at": "2025-07-26T13:39:13.980860Z"
+    },
+    {
+        "email": "ameer.waeel.ali2@gmail.com",
+        "updated_at": "2025-07-26T13:39:25.496389Z",
+        "created_at": "2025-07-26T13:39:25.496389Z"
+    }
+]

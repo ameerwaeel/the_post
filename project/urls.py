@@ -28,6 +28,8 @@ urlpatterns = [
     path('ai_model/', include('ai_model.urls')),
     path('chat/', include('chat.urls')),
     path('products/', include('products.urls')),
+    path('contact_us/', include('contact_us.urls')),  
+
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
