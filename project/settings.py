@@ -42,6 +42,8 @@ CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
     "https://www.n8n-api.thepost.digital",
     "https://n8n-api.thepost.digital",
+    "https://www.thepost.digital",
+    "https://thepost.digital",    
 ]
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_METHODS = [
@@ -68,6 +70,8 @@ CORS_ALLOW_HEADERS = [
 CSRF_TRUSTED_ORIGINS = [
     "https://www.n8n-api.thepost.digital",
     "https://n8n-api.thepost.digital",
+    "https://www.thepost.digital",
+    "https://thepost.digital",    
 ]
 
 
