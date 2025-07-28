@@ -12,3 +12,7 @@ admin.site.register(Imgs)
 admin.site.register(HomepageProjects)
 admin.site.register(Counters)
 admin.site.register(Services)
+admin.site.register(Branding)
+admin.site.register(DirectionSection)
+admin.site.register(DescriptionTags)
+

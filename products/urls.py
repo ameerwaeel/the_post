@@ -31,5 +31,14 @@ urlpatterns = [
     path('Counters/<uuid:uuid>/', CountersDetailView.as_view()),
     
     path('Services/', ServicesListCreateView.as_view()),
-    path('Services/<uuid:uuid>/', ServicesDetailView.as_view()),            
+    path('Services/<uuid:uuid>/', ServicesDetailView.as_view()),
+    
+    path('DescriptionTag/', DescriptionTagsListCreateView.as_view()),
+    path('DescriptionTag/<uuid:uuid>/', DescriptionTagsDetailView.as_view()),
+
+    path('DirectionSection/', DirectionSectionListCreateView.as_view()),
+    path('DirectionSection/<uuid:uuid>/', DirectionSectionDetailView.as_view()),
+
+    path('Branding/', BrandingListCreateView.as_view()),
+    path('Branding/<uuid:uuid>/', BrandingDetailView.as_view()),            
 ]

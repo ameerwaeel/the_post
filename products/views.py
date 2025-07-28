@@ -73,7 +73,10 @@ class ProjectsListCreateView(generics.ListCreateAPIView):
         # ✅ استخدم ProjectsSerializer للرد بالبيانات بعد الإنشاء
         response_serializer = ProjectsSerializer(project)
         return Response(response_serializer.data, status=status.HTTP_201_CREATED)
-
+    # def get_serializer_class(self):
+    #     if self.request.method == 'POST':
+    #         return ProjectsCreateSerializer
+    #     return ProjectsSerializer  # ← ده المهم
     
 class ProjectsDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Projects.objects.all()
@@ -107,14 +110,55 @@ class ImgsListCreateView(generics.ListCreateAPIView):
     queryset = Imgs.objects.all()
     serializer_class = ImgsSerializer
     parser_classes = [JSONParser, MultiPartParser, FormParser]
+    def get(self, request):
+        response_data = {}
 
+        for dir_value in ["left", "center", "right"]:
+            img = Imgs.objects.filter(direction__direction__icontains=dir_value).first()
+            if img:
+                # serialize الصورة
+                data = ImgsSerializer(img).data
+                response_data[dir_value] = data
+
+        return Response(response_data)
 class ImgsDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Imgs.objects.all()
     serializer_class = ImgsSerializer
     parser_classes = [JSONParser, MultiPartParser, FormParser]
     lookup_field = 'uuid'
 
+class BrandingListCreateView(generics.ListCreateAPIView):
+    queryset = Branding.objects.all()
+    serializer_class = BrandingSerializer
+    parser_classes = [JSONParser, MultiPartParser, FormParser]
 
+class BrandingDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Branding.objects.all()
+    serializer_class = BrandingSerializer
+    parser_classes = [JSONParser, MultiPartParser, FormParser]
+    lookup_field = 'uuid'
+
+class DescriptionTagsListCreateView(generics.ListCreateAPIView):
+    queryset = DescriptionTags.objects.all()
+    serializer_class = DescriptionTagsSerializer
+    parser_classes = [JSONParser, MultiPartParser, FormParser]
+
+class DescriptionTagsDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = DescriptionTags.objects.all()
+    serializer_class = DescriptionTagsSerializer
+    parser_classes = [JSONParser, MultiPartParser, FormParser]
+    lookup_field = 'uuid'
+
+class DirectionSectionListCreateView(generics.ListCreateAPIView):
+    queryset = DirectionSection.objects.all()
+    serializer_class = DirectionSectionSerializer
+    parser_classes = [JSONParser, MultiPartParser, FormParser]
+
+class DirectionSectionDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = DirectionSection.objects.all()
+    serializer_class = DirectionSectionSerializer
+    parser_classes = [JSONParser, MultiPartParser, FormParser]
+    lookup_field = 'uuid'
 
 
 class HomepageProjectsListCreateView(generics.ListCreateAPIView):
