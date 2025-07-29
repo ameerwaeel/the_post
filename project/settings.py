@@ -194,19 +194,30 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
+# settings.py
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
-    "static/",
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static', 'site_static')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+
+# STATIC_URL = 'static/'
+# STATICFILES_DIRS = [
+#     BASE_DIR / "static",
+#     "static/",
+# ]
 # STATICFILES_DIRS = [
 #     BASE_DIR / "static",
 # ]
 
-STATIC_ROOT = os.path.join(BASE_DIR,'static','site_static')
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
-MEDIA_URL = '/media/'
+# STATIC_ROOT = os.path.join(BASE_DIR,'static','site_static')
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+# MEDIA_URL = '/media/'
 CKEDITOR_5_UPLOAD_PATH = "uploads/"
 CKEDITOR_5_IMAGE_BACKEND = "pillow"
 
