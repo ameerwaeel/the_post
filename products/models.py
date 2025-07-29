@@ -36,7 +36,7 @@ class SlugUUIDMixin(models.Model):
             slug = f"{base_slug}-{counter}"
             counter += 1
         return slug
-    
+
 class TimeStampedModel(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -77,7 +77,7 @@ class WhoWeAre(SlugUUIDMixin, TimeStampedModel):
             self.slug = self.generate_unique_slug(self.name, WhoWeAre)
         super().save(*args, **kwargs)
     def __str__(self): return str(self.name)
-    
+
 class Logo(SlugUUIDMixin, TimeStampedModel):
     name=CKEditor5Field( config_name='default',verbose_name='name')
     link = models.URLField(verbose_name='link')
@@ -181,7 +181,7 @@ class DirectionSection(SlugUUIDMixin, TimeStampedModel):
         if not self.pk or DirectionSection.objects.get(pk=self.pk).direction != self.direction:
             self.slug = self.generate_unique_slug(self.direction, DirectionSection)
         super().save(*args, **kwargs)
-    def __str__(self): return str(self.direction)    
+    def __str__(self): return str(self.direction)
 class Imgs(SlugUUIDMixin, TimeStampedModel):
     # project=models.ForeignKey("Projects", verbose_name=("Project"), on_delete=models.CASCADE)
     img=models.ImageField(upload_to='image/',verbose_name='img',null=True, blank=True)
@@ -221,7 +221,7 @@ class Counters(SlugUUIDMixin, TimeStampedModel):
     strategies_numbers=models.PositiveIntegerField(verbose_name='strategies_numbers')
     strategies_description=CKEditor5Field( config_name='default',verbose_name='strategies_description')
     subscribbers_numbers=models.PositiveIntegerField(verbose_name='subscribbers_numbers')
-    subscribbers_description=CKEditor5Field( config_name='default',verbose_name='subscribbers_description')        
+    subscribbers_description=CKEditor5Field( config_name='default',verbose_name='subscribbers_description')
 
     class Meta:
         verbose_name = ("Counter")
@@ -246,4 +246,3 @@ class Services(SlugUUIDMixin, TimeStampedModel):
         super().save(*args, **kwargs)
     def __str__(self): return str(self.name)
 
-    
