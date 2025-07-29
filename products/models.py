@@ -45,16 +45,16 @@ class TimeStampedModel(models.Model):
 
     # title = CKEditor5Field( config_name='default',related_name='projects')
 class OurWorks(SlugUUIDMixin, TimeStampedModel):
-    name=CKEditor5Field( config_name='default',verbose_name='name')
-    description=CKEditor5Field( config_name='default',verbose_name='description')
-    rightcolorfrom=models.CharField( max_length=50,verbose_name='right color from')
-    rightcolorto=models.CharField( max_length=50,verbose_name='right color to')
-    leftcolorfrom=models.CharField( max_length=50,verbose_name='left color from')
-    leftcolorto=models.CharField( max_length=50,verbose_name='left color to')
-    link = models.URLField(verbose_name='link')
-    main_img=models.ImageField(upload_to='main_img/',null=False, blank=False,verbose_name='main img')
-    right_img=models.ImageField(upload_to='right_img/',null=False, blank=False,verbose_name='right img')
-    left_img=models.ImageField(upload_to='left_img/',null=False, blank=False,verbose_name='left img')
+    name=CKEditor5Field( config_name='default',verbose_name='name',null=True, blank=True)
+    description=CKEditor5Field( config_name='default',verbose_name='description',null=True, blank=True)
+    rightcolorfrom=models.CharField( max_length=50,verbose_name='right color from',null=True, blank=True)
+    rightcolorto=models.CharField( max_length=50,verbose_name='right color to',null=True, blank=True)
+    leftcolorfrom=models.CharField( max_length=50,verbose_name='left color from',null=True, blank=True)
+    leftcolorto=models.CharField( max_length=50,verbose_name='left color to',null=True, blank=True)
+    link = models.URLField(verbose_name='link',null=True, blank=True)
+    main_img=models.ImageField(upload_to='main_img/',null=True, blank=True,verbose_name='main img')
+    right_img=models.ImageField(upload_to='right_img/',null=True, blank=True,verbose_name='right img')
+    left_img=models.ImageField(upload_to='left_img/',null=True, blank=True,verbose_name='left img')
     def save(self, *args, **kwargs):
         if not self.pk or OurWorks.objects.get(pk=self.pk).name != self.name:
             self.slug = self.generate_unique_slug(self.name, OurWorks)
@@ -106,18 +106,18 @@ class DescriptionTags(SlugUUIDMixin, TimeStampedModel):
     def __str__(self): return str(self.name)
 
 class Projects(SlugUUIDMixin, TimeStampedModel):
-    name=CKEditor5Field( config_name='default',verbose_name='name')
-    description=CKEditor5Field( config_name='default',verbose_name='description')
-    description_card=CKEditor5Field( config_name='default',verbose_name='description card')    
+    name=CKEditor5Field( config_name='default',verbose_name='name',null=True, blank=True)
+    description=CKEditor5Field( config_name='default',verbose_name='description',null=True, blank=True)
+    description_card=CKEditor5Field( config_name='default',verbose_name='description card',null=True, blank=True)    
     main_img=models.ImageField(upload_to='main_img/',verbose_name='main img',null=True, blank=True)
-    logo=models.ImageField(upload_to='right_img/',null=False, blank=False,verbose_name='logo img')
-    problem_defination=CKEditor5Field( config_name='default',verbose_name='problem defination')
-    our_solution=models.ManyToManyField("OurSolution", verbose_name=("our solution"),related_name='projects')
-    description_tags=models.ManyToManyField("DescriptionTags", verbose_name=("Description Tags"),related_name='projects')
-    branding=models.ManyToManyField("Branding", verbose_name=("Branding"),related_name='projects')
-    imges=models.ManyToManyField("Imgs",verbose_name=("imgs"), related_name='projects')
-    our_results=models.ManyToManyField("OurResults", verbose_name=("our results"),related_name='projects')
-    link = models.URLField(verbose_name=("link"), null=True, blank=True)
+    logo=models.ImageField(upload_to='right_img/',null=True, blank=True,verbose_name='logo img')
+    problem_defination=CKEditor5Field( config_name='default',verbose_name='problem defination',null=True,blank=True)
+    our_solution=models.ManyToManyField("OurSolution", verbose_name=("our solution"),related_name='projects',blank=True)
+    description_tags=models.ManyToManyField("DescriptionTags", verbose_name=("Description Tags"),related_name='projects',blank=True)
+    branding=models.ManyToManyField("Branding", verbose_name=("Branding"),related_name='projects',blank=True)
+    imges=models.ManyToManyField("Imgs",verbose_name=("imgs"), related_name='projects',blank=True)
+    our_results=models.ManyToManyField("OurResults", verbose_name=("our results"),related_name='projects',blank=True)
+    link = models.URLField(verbose_name=("link"), blank=True)
     class Meta:
         verbose_name = ("Project")
         verbose_name_plural = ("Projects")
@@ -166,10 +166,10 @@ class Branding(SlugUUIDMixin, TimeStampedModel):
         verbose_name_plural = ("Branding")
 
     def save(self, *args, **kwargs):
-        if not self.pk or Branding.objects.get(pk=self.pk).tiltle != self.tiltle:
-            self.slug = self.generate_unique_slug(self.tiltle, Branding)
+        if not self.pk or Branding.objects.get(pk=self.pk).title != self.title:
+            self.slug = self.generate_unique_slug(self.title, Branding)
         super().save(*args, **kwargs)
-    def __str__(self): return str(self.tiltle)
+    def __str__(self): return str(self.title)
 
 class DirectionSection(SlugUUIDMixin, TimeStampedModel):
     direction=CKEditor5Field( config_name='default',verbose_name='direction')
