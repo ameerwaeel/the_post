@@ -36,7 +36,7 @@ class SlugUUIDMixin(models.Model):
             slug = f"{base_slug}-{counter}"
             counter += 1
         return slug
-    
+
 class TimeStampedModel(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -47,10 +47,10 @@ class TimeStampedModel(models.Model):
 class OurWorks(SlugUUIDMixin, TimeStampedModel):
     name=CKEditor5Field( config_name='default',verbose_name='name')
     description=CKEditor5Field( config_name='default',verbose_name='description')
-    rightcolorfrom=models.CharField( max_length=50,verbose_name='right color from')
-    rightcolorto=models.CharField( max_length=50,verbose_name='right color to')
-    leftcolorfrom=models.CharField( max_length=50,verbose_name='left color from')
-    leftcolorto=models.CharField( max_length=50,verbose_name='left color to')
+    rightcolorfrom=models.CharField( max_length=50,verbose_name='right color from', default='#ffffff')
+    rightcolorto=models.CharField( max_length=50,verbose_name='right color to', default='#ffffff')
+    leftcolorfrom=models.CharField( max_length=50,verbose_name='left color from', default='#000000')
+    leftcolorto=models.CharField( max_length=50,verbose_name='left color to', default='#000000')
     link = models.URLField(verbose_name='link')
     main_img=models.ImageField(upload_to='main_img/',null=False, blank=False,verbose_name='main img')
     right_img=models.ImageField(upload_to='right_img/',null=False, blank=False,verbose_name='right img')
@@ -77,7 +77,7 @@ class WhoWeAre(SlugUUIDMixin, TimeStampedModel):
             self.slug = self.generate_unique_slug(self.name, WhoWeAre)
         super().save(*args, **kwargs)
     def __str__(self): return str(self.name)
-    
+
 class Logo(SlugUUIDMixin, TimeStampedModel):
     name=CKEditor5Field( config_name='default',verbose_name='name')
     link = models.URLField(verbose_name='link')
@@ -108,13 +108,13 @@ class DescriptionTags(SlugUUIDMixin, TimeStampedModel):
 class Projects(SlugUUIDMixin, TimeStampedModel):
     name=CKEditor5Field( config_name='default',verbose_name='name')
     description=CKEditor5Field( config_name='default',verbose_name='description')
-    description_card=CKEditor5Field( config_name='default',verbose_name='description card')    
+    description_card=CKEditor5Field( config_name='default',verbose_name='description card')
     main_img=models.ImageField(upload_to='main_img/',verbose_name='main img',null=True, blank=True)
     logo=models.ImageField(upload_to='right_img/',null=False, blank=False,verbose_name='logo img')
     problem_defination=CKEditor5Field( config_name='default',verbose_name='problem defination')
     our_solution=models.ManyToManyField("OurSolution", verbose_name=("our solution"),related_name='projects')
     description_tags=models.ManyToManyField("DescriptionTags", verbose_name=("Description Tags"),related_name='projects')
-    branding=models.ManyToManyField("Branding", verbose_name=("Branding"),related_name='projects')
+    branding=models.ManyToManyField("Branding", verbose_name=("Branding"),related_name='projects', blank=True)
     imges=models.ManyToManyField("Imgs",verbose_name=("imgs"), related_name='projects')
     our_results=models.ManyToManyField("OurResults", verbose_name=("our results"),related_name='projects')
     link = models.URLField(verbose_name=("link"), null=True, blank=True)
@@ -181,7 +181,7 @@ class DirectionSection(SlugUUIDMixin, TimeStampedModel):
         if not self.pk or DirectionSection.objects.get(pk=self.pk).direction != self.direction:
             self.slug = self.generate_unique_slug(self.direction, DirectionSection)
         super().save(*args, **kwargs)
-    def __str__(self): return str(self.direction)    
+    def __str__(self): return str(self.direction)
 class Imgs(SlugUUIDMixin, TimeStampedModel):
     # project=models.ForeignKey("Projects", verbose_name=("Project"), on_delete=models.CASCADE)
     img=models.ImageField(upload_to='image/',verbose_name='img',null=True, blank=True)
@@ -221,7 +221,7 @@ class Counters(SlugUUIDMixin, TimeStampedModel):
     strategies_numbers=models.PositiveIntegerField(verbose_name='strategies_numbers')
     strategies_description=CKEditor5Field( config_name='default',verbose_name='strategies_description')
     subscribbers_numbers=models.PositiveIntegerField(verbose_name='subscribbers_numbers')
-    subscribbers_description=CKEditor5Field( config_name='default',verbose_name='subscribbers_description')        
+    subscribbers_description=CKEditor5Field( config_name='default',verbose_name='subscribbers_description')
 
     class Meta:
         verbose_name = ("Counter")
@@ -246,4 +246,3 @@ class Services(SlugUUIDMixin, TimeStampedModel):
         super().save(*args, **kwargs)
     def __str__(self): return str(self.name)
 
-    
