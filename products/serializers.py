@@ -69,7 +69,7 @@ class ProjectsSerializer(serializers.ModelSerializer):
         model = Projects
         fields = [
             'name', 'description', 'link', 'main_img', 'logo',
-            'problem_defination', 'our_solution', 'imges', 'our_results',
+            'problem_defination', 'our_solution', 'imges', 'our_results','logo_card',
             'updated_at', 'created_at','branding','description_tags','description_card'
         ]
     def get_imges(self, obj):
@@ -122,7 +122,7 @@ class ProjectsCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Projects
         fields = [
-            'name', 'description', 'link', 'main_img', 'logo',
+            'name', 'description', 'link', 'main_img', 'logo','logo_card',
             'problem_defination', 'our_solution', 'imges', 'our_results'
             , 'description_tags', 'description_card','branding'
         ]

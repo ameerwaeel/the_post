@@ -111,6 +111,7 @@ class Projects(SlugUUIDMixin, TimeStampedModel):
     description_card=CKEditor5Field( config_name='default',verbose_name='description card',null=True, blank=True)    
     main_img=models.ImageField(upload_to='main_img/',verbose_name='main img',null=True, blank=True)
     logo=models.ImageField(upload_to='right_img/',null=True, blank=True,verbose_name='logo img')
+    logo_card=models.ImageField(upload_to='logo_card/',null=True, blank=True,verbose_name='logo card')
     problem_defination=CKEditor5Field( config_name='default',verbose_name='problem defination',null=True,blank=True)
     our_solution=models.ManyToManyField("OurSolution", verbose_name=("our solution"),related_name='projects',blank=True)
     description_tags=models.ManyToManyField("DescriptionTags", verbose_name=("Description Tags"),related_name='projects',blank=True)
